@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,300;0,500;1,200;1,500&family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,500&display=swap');
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 html{
     font-family: 'Roboto', sans-serif;
     font-size: 62.5%;
@@ -9,36 +14,6 @@ html{
     height: 4em;
     width: 14em;
 }
-
-nav{
-	background-color: rgb(250, 209, 159);
-	position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-    border-radius: 1em;
-	}
-
-	nav ul{
-    display: flex;
-	}
-		nav ul li{
-			list-style: none;
-			display: inline-block;
-			margin-right: 50px;
-		}
-
-		nav ul li a{
-			font-size: 1.8rem;
-			text-decoration: none;
-			color: #5B5959;
-		}
-		nav ul li a:hover{
-			color:black;
-			font-weight: 600;
-		}
 
 h1{
     font-size: 3em;
@@ -55,11 +30,76 @@ p{
     font-size: 1.5em;;   
 }
 
+/*Inicia MOBILE FIRST*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "nav"
+    "headerPrincipal"
+    "seccionDescripcion"
+    "seccionTablero"
+    "seccionContacto"
+    "footer"
+    ;
+}
+
+.mainNav{
+    grid-area: nav;
+    position: sticky;
+    background-color: rgb(250, 209, 159);
+    padding: 10px 30px;
+    margin: 10px 10px;
+    border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 0;
+}
+    .mainNav ul{
+        display: flex;
+        justify-content: space-evenly;
+	}
+		.mainNav ul li{
+			list-style: none;
+			display: inline-block;
+			margin: 0px 10px;
+		}
+
+		.mainNav ul li a{
+			font-size: 1.8rem;
+			text-decoration: none;
+			color: #5B5959;
+		}
+		.mainNav ul li a:hover{
+			color:black;
+			font-weight: 600;
+		}
+
+.headerPrincipal{
+    grid-area: headerPrincipal;
+}
+.sectionDescripcion{
+    grid-area: seccionDescripcion;
+}
+.seccionTablero{
+    grid-area: seccionTablero;
+}
+.seccionContacto{
+    grid-area: seccionContacto;
+}
+.footer{
+    grid-area: footer;   
+}
+
+
 
 .headerPrincipal{
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
     margin: 20px 0px;
 }
     .headerPrincipalTitulo h1{
@@ -78,11 +118,10 @@ p{
         text-align: center;
     }
     .headerPrincipal img{
-        height: 25%;
-        width: 50%;
-
+        height: 171%;
+        width: 51%;
         border-radius: 2em;
-        margin: 0px 20px 0px 0px;
+        margin: 20px 20px;
     }
     .headerPrincipalTitulo{
             margin-left: 50px;
@@ -96,9 +135,11 @@ p{
     justify-content: center;
     align-items: center;
     align-content: space-between;
-    margin: 10px 30px;
     padding: 10px 25px;
-    flex-direction: row;
+    margin: 10px 10px;
+    border-radius: 2em;
+    flex-direction: column;
+    background-color: rgba(255, 245, 234, 0.515);
 }
     .sectionDescripcion h2{
         display: flex;
@@ -128,7 +169,7 @@ p{
 .btn{
     font-size: 1.5em;
     text-align: center;
-    margin: 0px 5px;
+    margin: 5px 5px;
     padding:0.5em;
     border-radius: 0.5em;
     border-color: #00000000;
@@ -156,7 +197,8 @@ p{
         justify-content: center;
         align-items: center;
         align-content: space-around;
-        margin: 0px 0px;
+        margin: 10px 10px;
+        border-radius: 2em;
         padding: 20px 0px 20px 0;
         flex-direction: column;
         background-color: rgb(255, 241, 224);
@@ -165,13 +207,13 @@ p{
         text-align: center;
         padding:0.5em;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-evenly;
         margin: 10px  0 0;
         flex-wrap: wrap;
     }
     #seccionTableroInterno div{
-        margin: 0 30px 0 30px;
+        margin: 10px 30px 0 30px;
         
         padding: 20px;
         display: flex;
@@ -212,7 +254,7 @@ p{
     .seccionContacto div{
         display: flex;
         justify-content: space-between;
-        flex-direction: row;
+        flex-direction: column;
         margin: 0px 0px;
         padding: 20px 0px 0 0;
         flex-wrap: wrap;
@@ -222,7 +264,7 @@ p{
         justify-content: center;
         align-items: flex-start;
         flex-direction: column;
-        margin: 0px 30px;
+        margin: 10px 30px;
         padding: 20px;
         background-color:  rgb(255, 242, 227);
         border-radius: 0.7em;
@@ -237,6 +279,7 @@ p{
     .seccionContacto div iframe{
         margin: 0px 30px;
         padding: 0;
+
     }
 
 footer{
@@ -342,6 +385,7 @@ footer{
         background-color: white;
         border:2px solid rgb(250, 209, 159);
         border-radius: 2em ;
+        margin: 5px 5px;
     }
     #figuraMotivacion p{
         font-size: 15px;
@@ -370,3 +414,67 @@ footer{
         flex-direction: row;
         padding: 20px 20px;
     }
+
+    /*Inicia Breakpoints*/
+    /*Para el modo tablet*/
+@media (min-width: 768px){
+    .contenedor{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+            "nav"
+            "headerPrincipal"
+            "seccionDescripcion"
+            "seccionTablero"
+            "seccionContacto"
+            "footer"
+            ;
+    }
+        /*Los logros se verán más de dos por fila*/
+    .seccionTablero #seccionTableroInterno{
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+    }
+
+}
+
+    /*Para el modo pantalla en escritorio*/
+@media (min-width: 1024px){
+    .contenedor{
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas:
+        "nav nav"
+        "headerPrincipal headerPrincipal"
+        "seccionDescripcion seccionTablero"     
+        "seccionContacto seccionContacto"
+        "footer footer"
+        ;
+    }
+    .mainNav{
+        grid-area: nav;
+        position: sticky;
+        background-color: rgb(250, 209, 159);
+        padding: 10px 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .headerPrincipal{
+        display: flex;
+        flex-direction: row;
+    }
+        .headerPrincipal img{
+            height: 91%;
+            width: 51%;
+        }
+    .seccionContacto div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-around;
+    }
+}
