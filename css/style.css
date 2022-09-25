@@ -29,9 +29,7 @@ h3{
     text-align: center;
     margin: 0px 5px;
 }
-#seccionTableroInterno div h3{
-    font-size: 5em;
-}
+
 p{
     font-size: 1.5em;;   
 }
@@ -274,8 +272,10 @@ p{
         background-color:  rgb(255, 255, 255);
         border-radius: 0.7em;
     }
-    #seccionTableroInterno div h3{
+    #seccionTableroInterno div #numeroTableroInterno{
+            font-size: 5em;
             margin: 0;
+            font-weight: bold;
         }
         #seccionTableroInterno div p{
             margin: 0;
