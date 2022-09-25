@@ -60,16 +60,17 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 0;
 }
     .mainNav ul{
         display: flex;
-        justify-content: space-evenly;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: center;
+
 	}
 		.mainNav ul li{
 			list-style: none;
-			display: inline-block;
-			margin: 0px 10px;
+			margin: 0px 20px;
 		}
 
 		.mainNav ul li a{
