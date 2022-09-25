@@ -497,6 +497,7 @@ footer{
 }
 
     /*Para el modo pantalla en escritorio*/
+    /*Descripcion al lado de Tablero queda mejor creo je >o<*/
 @media (min-width: 1024px){
     .contenedor{
         display: grid;
