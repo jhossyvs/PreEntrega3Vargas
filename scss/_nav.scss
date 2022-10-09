@@ -1,0 +1,26 @@
+
+.mainNav{
+    grid-area: nav;
+    position: sticky;
+    background: map-get($map: $paleta, $key: 'backgroundGradiente');
+    padding: 10px 30px;
+    margin: 10px 10px;
+    border-radius: 1em;
+    @include flex(column,center,center,wrap);
+    ul{
+        @include flex(column,center,center,wrap);
+        li{
+			list-style: none;
+			margin: 0px 20px;
+            a{
+                font-size: 1.8rem;
+                text-decoration: none;
+                color: #5B5959;
+                &:hover{
+                    color:black;
+                    font-weight: 600;
+                }
+            }
+		}		
+	}
+}

@@ -1,0 +1,36 @@
+/*Mixin del FLEXBOX*/
+@mixin flex ($direction, $justify, $align, $wrap) {
+    display:flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+/*Mapa de la paleta*/
+$paleta:(
+    'backgroundColorUno': rgb(255, 255, 255),
+    'backgroundColorDos': rgb(250, 209, 159),
+    'backgroundColorTres': rgb(255, 232, 204),
+    'backgroundGradiente': linear-gradient(to right top,#fae993,#ffbf7f)
+);
+
+/*MIXMIN de los Breakpoints para el MOBILE FIRST*/
+
+@mixin media($breakpoint){
+    @if $breakpoint== mobile {
+        @media(min-width:280px) {
+            @content;
+        }
+    }
+    @if $breakpoint== tablet {
+        @media(min-width:768px) {
+            @content;
+        }
+    }
+    @if $breakpoint== desktop {
+        @media(min-width:1024px) {
+            @content;
+        }
+    }
+}

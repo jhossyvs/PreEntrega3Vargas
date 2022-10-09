@@ -1,0 +1,94 @@
+/*Inicia MOBILE FIRST*/
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "nav"
+    "headerPrincipal"
+    "seccionDescripcion"
+    "seccionTablero"
+    "seccionContacto"
+    "footer"
+    ;
+}
+
+.headerPrincipal{
+    grid-area: headerPrincipal;
+}
+.sectionDescripcion{
+    grid-area: seccionDescripcion;
+}
+.seccionTablero{
+    grid-area: seccionTablero;
+}
+.seccionContacto{
+    grid-area: seccionContacto;
+}
+.footer{
+    grid-area: footer;   
+}
+
+ /*Inicia Breakpoints*/
+    /*Para el modo tablet*/
+@include media(tablet){
+    /*Los logros se verán más de dos por fila*/
+    .seccionTablero #seccionTableroInterno{
+        @include flex(row,center,center,wrap);
+    }
+    .seccionesNosotros{
+        .seccionFiguras{
+            @include flex(column,space-evenly,stretch,nowrap);
+            #seccionFigurasInterno{
+                @include flex(row,space-evenly,center,nowrap);
+            }
+        }
+    }
+}
+
+/*Para el modo pantalla en escritorio*/
+/*Descripcion al lado de Tablero queda mejor creo je >o<*/
+@include media (desktop){
+    
+    .contenedor{
+        grid-template-columns: repeat(2,50%);
+        grid-template-areas:
+        "nav nav"
+        "headerPrincipal headerPrincipal"
+        "seccionDescripcion seccionTablero"     
+        "seccionContacto seccionContacto"
+        "footer footer"
+        ;
+    }
+    .mainNav{
+        grid-area: nav;
+        @include flex(row,space-between,center,wrap);
+        position: sticky;
+        padding: 10px 30px;
+        ul{
+            @include flex(row,space-between,center,wrap);
+        }
+    }
+    .headerPrincipal{
+        @include flex(row,center,center,nowrap);
+        img{
+            height: 95%;
+            width: 51%;
+        }
+    }
+    .sectionDescripcion{
+        @include flex(row,space-between,center,nowrap);
+    }
+    .seccionesIndex{
+        .sectionDescripcion{
+            @include flex(column,space-between,center,nowrap);
+        }
+    }
+    
+    .seccionContacto{
+        div{
+            @include flex(row,center,center,nowrap);
+        }
+    }
+}
+
